@@ -85,7 +85,7 @@
   .more .date { padding: var(--space-2) var(--space-3); transition: padding .35s ease; }
   .more .date .day { font-size: 28px; line-height: 32px; transition: font-size .35s ease, line-height .35s ease; }
   .more .date .month { max-height: 0; opacity: 0; overflow: hidden; margin-top: 0; transition: max-height .35s ease, opacity .35s ease, margin-top .35s ease; }
-  .more .date .label { padding-top: 2px; transition: padding-top .35s ease; }
+  .more .date .label { margin-top: 0; padding-bottom: 2px; transition: padding-bottom .35s ease; }
   .more .long { display: none; }
   .more-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: var(--space-3); align-self: center; }
   .more-head .small { color: var(--ink-muted); margin-top: var(--space-1); }
@@ -96,7 +96,7 @@
   .more:hover .date, .more:focus-within .date { padding: var(--space-4); }
   .more:hover .date .day, .more:focus-within .date .day { font-size: 64px; line-height: 64px; }
   .more:hover .date .month, .more:focus-within .date .month { max-height: 40px; opacity: 1; margin-top: var(--space-1); }
-  .more:hover .date .label, .more:focus-within .date .label { padding-top: var(--space-3); }
+  .more:hover .date .label, .more:focus-within .date .label { padding-bottom: var(--space-2); }
   .more:hover .short, .more:focus-within .short { display: none; }
   .more:hover .long, .more:focus-within .long { display: inline; }
   .more:hover .more-head, .more:focus-within .more-head { align-self: start; }
@@ -189,9 +189,9 @@
 
       <div class="more" tabindex="0" aria-label="Jahreskonzert mit Theater, Samstag 7. November 2026, mehr Infos">
         <div class="date">
+          <span class="label"><span class="short">Nov</span><span class="long">Samstag</span></span>
           <div class="day">7.</div>
           <div class="month">November 2026</div>
-          <span class="label"><span class="short">Nov</span><span class="long">Samstag</span></span>
         </div>
         <div>
           <div class="more-head">
@@ -219,9 +219,9 @@
 
       <div class="more" tabindex="0" aria-label="Weihnachtskonzert, Mittwoch 23. Dezember 2026, mehr Infos">
         <div class="date">
+          <span class="label"><span class="short">Dez</span><span class="long">Mittwoch</span></span>
           <div class="day">23.</div>
           <div class="month">Dezember 2026</div>
-          <span class="label"><span class="short">Dez</span><span class="long">Mittwoch</span></span>
         </div>
         <div>
           <div class="more-head">
