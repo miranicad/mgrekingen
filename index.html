@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Musikgesellschaft Rekingen</title>
-<meta name="description" content="Blasmusik aus Rekingen AG. Jahreskonzert mit Theater am Samstag, 7. November 2026, in der Mehrzweckhalle Chrüzlibachtal.">
+<meta name="description" content="Musikgesellschaft Rekingen: Blasmusik aus Rekingen AG. Konzerte, Anlässe und Proben.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600&display=swap">
@@ -187,37 +187,7 @@
       <span class="label kicker">Nächste Anlässe</span>
       <h2 class="h1">Konzerte</h2>
 
-      <div class="more" tabindex="0" aria-label="Jahreskonzert mit Theater, Samstag 7. November 2026, mehr Infos">
-        <div class="date">
-          <span class="label"><span class="short">Nov</span><span class="long">Samstag</span></span>
-          <div class="day">7.</div>
-          <div class="month">November 2026</div>
-        </div>
-        <div>
-          <div class="more-head">
-            <div>
-              <h3 class="h3">Jahreskonzert mit Theater</h3>
-              <p class="small">Samstag, 7. November 2026</p>
-            </div>
-            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="more-body">
-            <div>
-              <dl class="facts">
-                <div><dt>Was</dt><dd>Ein abwechslungsreiches Konzertprogramm, danach ein humorvolles Theaterstück. Für Speis und Trank ist gesorgt.</dd></div>
-                <div><dt>Türöffnung</dt><dd>18.30 Uhr</dd></div>
-                <div><dt>Konzertbeginn</dt><dd>20.00 Uhr</dd></div>
-                <div><dt>Ort</dt><dd>Mehrzweckhalle Chrüzlibachtal<br>5332 Rekingen AG</dd></div>
-                <div><dt>Eintritt</dt><dd>CHF 12.–</dd></div>
-                <div><dt>Reservation</dt><dd>ab 1. Oktober 2026 unter <a href="tel:+41793067171">079 306 71 71</a></dd></div>
-              </dl>
-              <a class="btn" href="tel:+41793067171">Plätze reservieren</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="more" tabindex="0" aria-label="Weihnachtskonzert, Mittwoch 23. Dezember 2026, mehr Infos">
+      <div class="more" data-date="2026-12-23" tabindex="0" aria-label="Weihnachtskonzert, Mittwoch 23. Dezember 2026, mehr Infos">
         <div class="date">
           <span class="label"><span class="short">Dez</span><span class="long">Mittwoch</span></span>
           <div class="day">23.</div>
@@ -309,5 +279,23 @@
   </div>
 </footer>
 
+<script>
+  // Blendet Anlässe ab dem Folgetag aus (Datum in data-date, Format JJJJ-MM-TT)
+  (function () {
+    var d = new Date();
+    var heute = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+    var karten = document.querySelectorAll('.more[data-date]');
+    var sichtbar = 0;
+    karten.forEach(function (k) {
+      if (k.dataset.date < heute) { k.remove(); } else { sichtbar++; }
+    });
+    if (karten.length && sichtbar === 0) {
+      var p = document.createElement('p');
+      p.className = 'lead';
+      p.textContent = 'Zurzeit sind keine Anlässe geplant. Schauen Sie bald wieder vorbei.';
+      document.querySelector('#konzert .wrap').appendChild(p);
+    }
+  })();
+</script>
 </body>
 </html>
