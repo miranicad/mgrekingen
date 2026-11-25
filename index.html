@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Musikgesellschaft Rekingen</title>
 <meta name="description" content="Musikgesellschaft Rekingen: Blasmusik aus Rekingen AG. Konzerte, Anlässe und Proben.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600&display=swap">
@@ -109,8 +112,9 @@
   .recap { margin-top: var(--space-4); }
   .more .gallery { margin-top: var(--space-4); }
   .gallery { margin-top: var(--space-5); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); }
-  .gallery figure { margin: 0; border-radius: var(--radius-md); overflow: hidden; background: var(--surface-tint); aspect-ratio: 4 / 3; }
-  .gallery img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .gallery figure { margin: 0; }
+  .gallery img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 25%; display: block; border-radius: var(--radius-md); background: var(--surface-tint); }
+  .gallery figcaption { margin-top: var(--space-2); font-size: 14px; line-height: 20px; color: var(--ink-muted); }
   .gallery .ph { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--ink-muted); font-style: italic; border: 1px dashed var(--ink-muted); border-radius: var(--radius-md); box-sizing: border-box; }
   .cols { margin-top: var(--space-5); display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-4); }
   .card { background: var(--surface-tint); border-radius: var(--radius-md); padding: var(--space-4); }
@@ -249,8 +253,8 @@
             <div>
               <p class="recap">Am 7. November 2026 durften wir in der Mehrzweckhalle Chrüzlibachtal unser Jahreskonzert mit Theater spielen. Herzlichen Dank allen, die dabei waren, und allen, die mitgeholfen haben.</p>
               <div class="gallery">
-                <figure><div class="ph">(Foto 1)</div></figure>
-                <figure><div class="ph">(Foto 2)</div></figure>
+                <figure><img src="rueckblick/konzert-ansage.jpg" alt="Präsident Bruno Leber spricht mit Mikrofon zum Publikum" width="1000" height="1272" loading="lazy"><figcaption>Präsident Bruno Leber begrüsst das Publikum</figcaption></figure>
+                <figure><img src="rueckblick/konzert-theater.jpg" alt="Marianne Leber im gepunkteten Kleid auf der Theaterbühne vor einer Schweizer Fahne" width="971" height="1300" loading="lazy"><figcaption>Marianne Leber, Regie und Schauspiel im Theater</figcaption></figure>
               </div>
             </div>
           </div>
@@ -310,6 +314,7 @@
       <dl class="facts">
         <div><dt>Präsident</dt><dd>Bruno Leber</dd></div>
         <div><dt>E-Mail</dt><dd>b.leber@bluewin.ch</dd></div>
+        <div><dt>Facebook</dt><dd><a href="https://www.facebook.com/p/Musikgesellschaft-Rekingen-100043278887463/" target="_blank" rel="noopener">Musikgesellschaft Rekingen auf Facebook</a></dd></div>
       </dl>
     </div>
   </section>
@@ -318,7 +323,7 @@
 <footer>
   <div class="wrap">
     <span>© 2026 Musikgesellschaft Rekingen</span>
-    <a href="#">Nach oben</a>
+    <span class="foot-links"><a href="https://www.facebook.com/p/Musikgesellschaft-Rekingen-100043278887463/" target="_blank" rel="noopener">Facebook</a> · <a href="#">Nach oben</a></span>
   </div>
 </footer>
 
